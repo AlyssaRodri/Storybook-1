@@ -5,12 +5,20 @@ import {
 import NavBar from "./navbar/NavBar";
 import Footer from "./footer/Footer";
 
-export default function PageContainer(){
+export default function PageContainer( {children} ){
     return (
-        <Box>
+        <Flex>
             <NavBar/>
+            <Box
+                display={'flex'}
+                bg={'#f6f6f6'}
+                flex={1}
+                flexGrow={1}
+                marginTop={'55'}>
+                {children}
+            </Box>
             <Footer/>
-        </Box>
+        </Flex>
         
     )
 }

@@ -1,12 +1,10 @@
 import {
     Box,
-    chakra,
     Container,
     Link,
     Stack,
     Text,
     useColorModeValue,
-    VisuallyHidden,
   } from '@chakra-ui/react';
   
   const Logo = (props) => {
