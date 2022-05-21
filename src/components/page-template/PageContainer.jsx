@@ -7,7 +7,10 @@ import Footer from "./footer/Footer";
 
 export default function PageContainer( {children} ){
     return (
-        <Flex>
+        <Flex
+        flexDirection={'column'}
+        justifyContent={'space-between'}
+        width={'full'}>
             <NavBar/>
             <Box
                 display={'flex'}
@@ -17,7 +20,9 @@ export default function PageContainer( {children} ){
                 marginTop={'55'}>
                 {children}
             </Box>
+            
             <Footer/>
+
         </Flex>
         
     )
