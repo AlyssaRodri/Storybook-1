@@ -6,12 +6,14 @@ import {
     Text,
     Stack,
     Image,
+
   } from '@chakra-ui/react';
+  import { Outlet, Link } from "react-router-dom";
   
-  const IMAGE =
-    'https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80';
+  // const IMAGE =
+  //   'https://images.unsplash.com/photo-1518051870910-a46e30d9db16?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80';
   
-  export default function ProductSimple() {
+  export default function CardTemplate(props) {
     return (
       <Center py={12}>
         <Box
@@ -37,7 +39,7 @@ import {
               pos: 'absolute',
               top: 5,
               left: 0,
-              backgroundImage: `url(${IMAGE})`,
+              backgroundImage: `url(${props.IMAGE})`,
               filter: 'blur(15px)',
               zIndex: -1,
             }}
@@ -51,25 +53,20 @@ import {
               height={230}
               width={282}
               objectFit={'cover'}
-              src={IMAGE}
+              src={props.IMAGE}
             />
           </Box>
           <Stack pt={10} align={'center'}>
-            <Text color={'gray.500'} fontSize={'sm'} textTransform={'uppercase'}>
-              Brand
-            </Text>
             <Heading fontSize={'2xl'} fontFamily={'body'} fontWeight={500}>
-              Nice Chair, pink
+              {props.title}
             </Heading>
             <Stack direction={'row'} align={'center'}>
               <Text fontWeight={800} fontSize={'xl'}>
-                $57
-              </Text>
-              <Text textDecoration={'line-through'} color={'gray.600'}>
-                $199
+                {props.description}
               </Text>
             </Stack>
           </Stack>
+          <Link to='/rhyme1'>Testing</Link>
         </Box>
       </Center>
     );
